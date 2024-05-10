@@ -33,6 +33,9 @@ const filtersSlice = createSlice({
     },
   },
   reducers: {
+    changeIsFiltered: (state) => {
+      state.filters.isFiltered = !state.filters.isFiltered;
+    },
     changeBrand: (state, { payload }) => {
       state.filters.brand = payload;
     },
@@ -56,5 +59,10 @@ export const {
   selectMileage,
   selectFiltersState,
 } = filtersSlice.selectors;
-export const { changeBrand, changePrice, changeMilFrom, changeMilTo } =
-  filtersSlice.actions;
+export const {
+  changeIsFiltered,
+  changeBrand,
+  changePrice,
+  changeMilFrom,
+  changeMilTo,
+} = filtersSlice.actions;
