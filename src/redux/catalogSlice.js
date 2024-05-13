@@ -7,6 +7,9 @@ const initialState = {
     items: [],
     loading: false,
     error: null,
+    perPage: 12,
+    itemsOnLastPage: null,
+    page: 1,
   },
 };
 
@@ -23,6 +26,15 @@ const carsSlice = createSlice({
     selectError: (state) => {
       return state.cars.error;
     },
+    selectPerPage: (state) => {
+      return state.cars.perPage;
+    },
+    selectItemsOnLastPage: (state) => {
+      return state.cars.itemsOnLastPage;
+    },
+    selectPage: (state) => {
+      return state.cars.page;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -31,9 +43,13 @@ const carsSlice = createSlice({
       })
       .addCase(fetchCars.fulfilled, (state, action) => {
         // state.cars.items = action.payload;
-        state.cars.items = action.payload;
+        console.log(action.payload);
+        state.cars.items = [...state.cars.items, ...action.payload];
+        state.cars.itemsOnLastPage = action.payload.length;
+        console.log(state.cars.itemsOnLastPage);
         state.cars.error = null;
         state.cars.loading = false;
+        state.cars.page += 1;
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.cars.error = action.payload;
@@ -85,4 +101,11 @@ export const selectFilteredCars = createSelector(
 );
 
 export const carsReducer = carsSlice.reducer;
-export const { selectLoading, selectError, selectCars } = carsSlice.selectors;
+export const {
+  selectLoading,
+  selectError,
+  selectCars,
+  selectPerPage,
+  selectItemsOnLastPage,
+  selectPage,
+} = carsSlice.selectors;

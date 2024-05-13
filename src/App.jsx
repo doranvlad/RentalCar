@@ -3,16 +3,18 @@ import Home from "./pages/Home/Home";
 import Favorites from "./pages/Favorites/Favorites";
 import Catalog from "./pages/Catalog/Catalog";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { takeCarsFromLocal } from "./redux/favoritesSlice";
 import { fetchCars } from "./redux/operations";
 import { useEffect } from "react";
+import { selectPage } from "./redux/catalogSlice";
 
 function App() {
   const dispatch = useDispatch();
+  const page = useSelector(selectPage);
 
   useEffect(() => {
-    dispatch(fetchCars(1));
+    dispatch(fetchCars(page));
     dispatch(takeCarsFromLocal());
   }, [dispatch]);
 
