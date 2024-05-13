@@ -30,6 +30,7 @@ const carsSlice = createSlice({
         state.cars.loading = true;
       })
       .addCase(fetchCars.fulfilled, (state, action) => {
+        // state.cars.items = action.payload;
         state.cars.items = action.payload;
         state.cars.error = null;
         state.cars.loading = false;
