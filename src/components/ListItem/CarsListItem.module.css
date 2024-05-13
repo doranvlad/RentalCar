@@ -1,0 +1,72 @@
+.wrap {
+  width: 274px;
+}
+
+.img {
+  width: 100%;
+  min-height: 268px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 14px;
+  border-radius: 12px;
+}
+
+.name_and_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-size: 16px;
+  color: #121417;
+  font-weight: 500;
+  line-height: 24px;
+
+  span {
+    color: #3470ff;
+  }
+}
+
+.price {
+  font-size: 16px;
+  color: #121417;
+  font-weight: 500;
+  line-height: 24px;
+  margin-right: 10px;
+}
+
+.more_info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  row-gap: 4px;
+  margin-bottom: 28px;
+  overflow: hidden; /* Обрезаем контент, который не помещается в две строки */
+  height: 40px;
+}
+
+.more_info div {
+  position: relative;
+  color: rgba(18, 20, 23, 0.5);
+
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+
+  white-space: nowrap; /* Предотвращаем перенос текста */
+}
+
+.more_info > div:not(:last-child)::after {
+  position: absolute;
+  right: -6px;
+  top: 0;
+  content: "";
+  display: block;
+  width: 1px;
+  height: 16px;
+  background-color: rgba(18, 20, 23, 0.1);
+}

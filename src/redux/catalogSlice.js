@@ -56,19 +56,26 @@ export const selectFilteredCars = createSelector(
 
     if (value.price) {
       cars = cars.filter((car) => {
-        car.rentalPrice === value.price;
+        return +car.rentalPrice.replace("$", "") <= value.price;
       });
     }
 
     if (value.mileage.from) {
+      console.log(value.mileage.from);
       cars = cars.filter((car) => {
-        car.mileage > value.mileage.from;
+        console.log(value.mileage.from);
+        console.log(car.mileage);
+        const find = +car.mileage - +value.mileage.from;
+        console.log(find);
+
+        return find >= 0;
       });
     }
 
     if (value.mileage.to) {
+      console.log(value.mileage.to);
       cars = cars.filter((car) => {
-        car.mileage < value.mileage.to;
+        return +car.mileage - +value.mileage.to <= 0;
       });
     }
 
@@ -77,4 +84,4 @@ export const selectFilteredCars = createSelector(
 );
 
 export const carsReducer = carsSlice.reducer;
-export const { selectLoading, selectError } = carsSlice.selectors;
+export const { selectLoading, selectError, selectCars } = carsSlice.selectors;

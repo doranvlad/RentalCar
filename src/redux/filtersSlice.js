@@ -17,24 +17,35 @@ const filtersSlice = createSlice({
   initialState,
   selectors: {
     selectIsFiltered: (state) => {
-      state.filters.isFiltered;
+      return state.filters.isFiltered;
     },
     selectBrand: (state) => {
-      state.filters.brand;
+      return state.filters.brand;
     },
     selectPrice: (state) => {
-      state.filters.price;
+      return state.filters.price;
     },
     selectMileage: (state) => {
-      state.filters.mileage;
+      return state.filters.mileage;
     },
     selectFiltersState: (state) => {
-      state.filters;
+      return state.filters;
     },
   },
   reducers: {
+    changeFiltersState: (state, { payload }) => {
+      console.log(payload);
+      state.filters.brand = payload.brand;
+      if (payload.price) {
+        // state.filters.price = "$" + payload.price;
+        state.filters.price = +payload.price;
+      }
+      state.filters.mileage.from = +payload.from;
+      state.filters.mileage.to = +payload.to;
+      // state.filters.isFiltered = !state.filters.isFiltered;
+    },
     changeIsFiltered: (state) => {
-      state.filters.isFiltered = !state.filters.isFiltered;
+      state.filters.isFiltered = true;
     },
     changeBrand: (state, { payload }) => {
       state.filters.brand = payload;
@@ -60,6 +71,7 @@ export const {
   selectFiltersState,
 } = filtersSlice.selectors;
 export const {
+  changeFiltersState,
   changeIsFiltered,
   changeBrand,
   changePrice,
