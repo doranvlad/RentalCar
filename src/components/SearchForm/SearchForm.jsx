@@ -3,11 +3,9 @@ import s from "./SearchForm.module.css";
 import Select from "react-select";
 import { selectCars } from "../../redux/catalogSlice";
 import Button from "../Button/Button";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { changeFiltersState, changeIsFiltered } from "../../redux/filtersSlice";
-import { customStyles } from "./selectStyles";
-import clsx from "clsx";
+import { customStyles, customStylesPrice } from "./selectStyles";
 
 function SearchForm() {
   const OrigBrands = useSelector(selectCars);
@@ -71,7 +69,7 @@ function SearchForm() {
           <Select
             id="price"
             options={newPriceForSelect}
-            styles={customStyles}
+            styles={customStylesPrice}
             placeholder="To $"
             {...register("price")}
             onChange={(selectedOption) =>
@@ -80,14 +78,28 @@ function SearchForm() {
           />
         </div>
         <div className={s.from_to_wrap}>
-          <label htmlFor="from">Сar mileage / km</label>
-          <input
-            type="number"
-            placeholder="From"
-            min="0"
-            {...register("from")}
-          />
-          <input type="number" placeholder="To" min="0" {...register("to")} />
+          <div>
+            <div>Сar mileage / km</div>
+            <input
+              type="number"
+              id=""
+              placeholder="From"
+              min="0"
+              className={s.input_from}
+              {...register("from")}
+            />
+          </div>
+          <div>
+            <div>$nbsp</div>
+            <input
+              type="number"
+              placeholder="To"
+              className={s.input_to}
+              id="to"
+              min="0"
+              {...register("to")}
+            />
+          </div>
         </div>
         <Button type={"Search"} onClick={handleSubmit} />
       </form>

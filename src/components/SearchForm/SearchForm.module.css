@@ -1,6 +1,65 @@
 .form {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 18px;
+}
+
+.from_to_wrap {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.input_from {
+  padding: 0;
+  padding-left: 24px;
+  width: 160px;
+  height: 48px;
+  border-radius: 14px 0px 0px 14px;
+  border: none;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+  outline: none;
+  caret-color: rgba(138, 138, 137, 0.8) !important;
+
+  background: #f7f7fb;
+  &::placeholder {
+    color: #121417;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 20px; /* 111.111% */
+  }
+}
+
+.input_to {
+  padding: 0;
+  padding-left: 24px;
+  width: 160px;
+  height: 48px;
+  border-radius: 0px 14px 14px 0px;
+  border: none;
+  outline: none;
+  caret-color: rgba(138, 138, 137, 0.8) !important;
+
+  background: #f7f7fb;
+  &::placeholder {
+    color: #121417;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 20px; /* 111.111% */
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
 }

@@ -25,6 +25,7 @@ export const customStyles = {
     ...styles,
     width: "224px",
     color: "red",
+
     fontFamily: "Poppins",
     fontSize: "16px",
     fontStyle: "normal",
@@ -36,7 +37,7 @@ export const customStyles = {
     flexWrap: "nowrap",
     borderColor: "transparent",
     outline: "transparent",
-    padding: "0px",
+    paddingLeft: "6px",
     borderRadius: "14px",
     background: "#F7F7FB",
     "&:hover": {
@@ -56,6 +57,7 @@ export const customStyles = {
       color: "#121417",
 
       padding: "0",
+      paddingLeft: "2px",
 
       "@media screen and (max-width: 767.98px)": {
         paddingLeft: "9px",
@@ -103,7 +105,7 @@ export const customStyles = {
       ...provided,
       margin: "0px",
 
-      // padding: '12px 20px 20px 12px',
+      //   padding: "12px 20px 20px 12px",
       height: "48px",
       //   backgroundColor: "#F7F7FB",
       caretColor: "transparent",
@@ -119,5 +121,32 @@ export const customStyles = {
   dropdownIndicator: (base) => ({
     ...base,
     color: "#121417",
+    paddingRight: "18px",
+  }),
+};
+
+export const customStylesPrice = {
+  ...customStyles,
+  control: (styles) => ({
+    ...styles,
+    width: "125px",
+    color: "red",
+    fontFamily: "Poppins",
+    fontSize: "16px",
+    fontStyle: "normal",
+    fontWeight: "400",
+    lineHeight: " normal",
+    border: "1px solid rgba(255, 255, 255, 0.4)",
+    boxShadow: "none",
+    display: "flex",
+    flexWrap: "nowrap",
+    borderColor: "transparent",
+    outline: "transparent",
+    paddingLeft: "6px",
+    borderRadius: "14px",
+    background: "#F7F7FB",
+    "&:hover": {
+      outline: "none",
+    },
   }),
 };

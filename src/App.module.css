@@ -1,0 +1,25 @@
+.nav_wrap {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 30px;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  &:active {
+    color: inherit;
+  }
+}
+
+.active {
+  color: #3470ff; /* Замените "green" на нужный вам цвет */
+}
