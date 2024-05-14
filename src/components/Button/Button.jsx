@@ -10,6 +10,8 @@ function Button({ type, onClick }) {
     btnType = "submit";
   } else if (type === "Learn more") {
     styles = clsx(s.btn, s.learn_more);
+  } else if (type === "Rental car") {
+    styles = clsx(s.btn, s.rental_car);
   }
 
   return (

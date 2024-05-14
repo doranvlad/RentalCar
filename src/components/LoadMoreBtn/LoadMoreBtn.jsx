@@ -10,7 +10,11 @@ function LoadMoreBtn() {
   const handleClick = () => {
     dispatch(fetchCars(page));
   };
-  return <div onClick={handleClick}>LoadMoreBtn</div>;
+  return (
+    <div className={s.load_btn}>
+      <p onClick={handleClick}>Load more</p>
+    </div>
+  );
 }
 
 export default LoadMoreBtn;

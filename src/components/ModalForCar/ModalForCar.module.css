@@ -1,0 +1,140 @@
+.modal_Wrap {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 20, 23, 0.5);
+  /* backdrop-filter: blur(3.5px); */
+}
+
+.modal {
+  position: relative;
+  width: 541px;
+  border-radius: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background: white;
+  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex-wrap: wrap;
+
+  h2 {
+    margin-bottom: 42px;
+    color: #fbfbfb;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.modal_close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  cursor: pointer;
+}
+
+/* @media screen and (max-width: 767.98px) {
+  .modal_Wrap {
+    margin-top: 60px;
+  }
+
+  .modal {
+    width: 100%;
+    height: 100%;
+    padding: 28px 20px;
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  .modal_close {
+    display: none;
+  }
+} */
+
+.img {
+  width: 100%;
+  border-radius: 14px;
+  height: 248px;
+
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 14px;
+}
+
+.name {
+  font-size: 16px;
+  color: #121417;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 8px;
+
+  span {
+    color: #3470ff;
+  }
+}
+
+.more_info {
+  width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  row-gap: 4px;
+  margin-bottom: 14px;
+}
+
+.more_info div {
+  position: relative;
+  color: rgba(18, 20, 23, 0.5);
+
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+
+  white-space: nowrap; /* Предотвращаем перенос текста */
+}
+
+.more_info > div:not(:last-child)::after {
+  position: absolute;
+  right: -6px;
+  top: 0;
+  content: "";
+  display: block;
+  width: 1px;
+  height: 16px;
+  background-color: rgba(18, 20, 23, 0.1);
+}
+
+.description {
+  width: 460px;
+  margin-bottom: 24px;
+}
+
+.accessories {
+  margin-bottom: 8px;
+}
+
+.cond_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  div {
+    padding: 7px 14px;
+    border-radius: 35px;
+    background: #f9f9f9;
+  }
+}

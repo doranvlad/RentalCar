@@ -6,6 +6,8 @@ import Button from "../Button/Button";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { changeFiltersState, changeIsFiltered } from "../../redux/filtersSlice";
+import { customStyles } from "./selectStyles";
+import clsx from "clsx";
 
 function SearchForm() {
   const OrigBrands = useSelector(selectCars);
@@ -49,11 +51,13 @@ function SearchForm() {
 
   return (
     <div className={s.form_wrap}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
         <div className={s.select_brand_wrap}>
           <label htmlFor="brand">Car brand</label>
           <Select
             id="brand"
+            classNamePrefix="react-select-brand"
+            styles={customStyles}
             options={newBrandsForSelect}
             placeholder="Enter the text"
             {...register("brand")}
@@ -67,6 +71,7 @@ function SearchForm() {
           <Select
             id="price"
             options={newPriceForSelect}
+            styles={customStyles}
             placeholder="To $"
             {...register("price")}
             onChange={(selectedOption) =>

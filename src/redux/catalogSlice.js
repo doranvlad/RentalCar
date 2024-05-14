@@ -43,10 +43,8 @@ const carsSlice = createSlice({
       })
       .addCase(fetchCars.fulfilled, (state, action) => {
         // state.cars.items = action.payload;
-        console.log(action.payload);
         state.cars.items = [...state.cars.items, ...action.payload];
         state.cars.itemsOnLastPage = action.payload.length;
-        console.log(state.cars.itemsOnLastPage);
         state.cars.error = null;
         state.cars.loading = false;
         state.cars.page += 1;
@@ -80,10 +78,7 @@ export const selectFilteredCars = createSelector(
     if (value.mileage.from) {
       console.log(value.mileage.from);
       cars = cars.filter((car) => {
-        console.log(value.mileage.from);
-        console.log(car.mileage);
         const find = +car.mileage - +value.mileage.from;
-        console.log(find);
 
         return find >= 0;
       });

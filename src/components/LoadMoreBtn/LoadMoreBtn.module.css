@@ -1,0 +1,22 @@
+.load_btn {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  p {
+    cursor: pointer;
+
+    color: #3470ff;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    text-decoration-line: underline;
+  }
+
+  p:hover {
+    color: #0b44cd;
+  }
+}

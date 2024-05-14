@@ -10,17 +10,23 @@ import {
 } from "../../redux/catalogSlice";
 import { fetchCars } from "../../redux/operations";
 import LoadMoreBtn from "../../components/LoadMoreBtn/LoadMoreBtn";
+import { selectIsFiltered } from "../../redux/filtersSlice";
+import { selectIsOpenModal } from "../../redux/modalSlice";
+import ModalForCar from "../../components/ModalForCar/ModalForCar";
 
 function Catalog() {
   const cars = useSelector(selectFilteredCars);
   const onLastPage = useSelector(selectItemsOnLastPage);
   const perPage = useSelector(selectPerPage);
+  const isFiltered = useSelector(selectIsFiltered);
+  const isOpenModal = useSelector(selectIsOpenModal);
 
   return (
     <>
+      {isOpenModal && <ModalForCar />}
       <SearchForm />
       <CarsList cars={cars} />
-      {onLastPage < perPage ? "" : <LoadMoreBtn />}
+      {onLastPage < perPage || isFiltered ? "" : <LoadMoreBtn />}
     </>
   );
 }
