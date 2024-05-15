@@ -90,7 +90,7 @@ function SearchForm() {
             />
           </div>
           <div>
-            <div>$nbsp</div>
+            <div className={s.hidden}>milleage to</div>
             <input
               type="number"
               placeholder="To"

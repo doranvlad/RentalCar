@@ -1,6 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import s from "./Catalog.module.css";
-
 import CarsList from "../../components/CarsList/CarsList";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import {
@@ -8,7 +7,6 @@ import {
   selectItemsOnLastPage,
   selectPerPage,
 } from "../../redux/catalogSlice";
-import { fetchCars } from "../../redux/operations";
 import LoadMoreBtn from "../../components/LoadMoreBtn/LoadMoreBtn";
 import { selectIsFiltered } from "../../redux/filtersSlice";
 import { selectIsOpenModal } from "../../redux/modalSlice";

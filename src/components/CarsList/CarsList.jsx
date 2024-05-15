@@ -23,7 +23,6 @@ function CarsList({ cars }) {
 
   return (
     <>
-      {loading && !error && <b>Request in progress...</b>}
       <ul className={s.list}>
         {carsFrom.map((car) => {
           return (
@@ -33,6 +32,7 @@ function CarsList({ cars }) {
           );
         })}
       </ul>
+      {loading && !error && <b>Request in progress...</b>}
     </>
   );
 }
