@@ -24,7 +24,7 @@ function Catalog() {
       {isOpenModal && <ModalForCar />}
       <SearchForm />
       <CarsList cars={cars} />
-      {onLastPage < perPage || isFiltered ? "" : <LoadMoreBtn />}
+      {onLastPage < perPage ? "" : <LoadMoreBtn />}
     </>
   );
 }

@@ -6,7 +6,6 @@ import {
   selectIsOpenModal,
 } from "../../redux/modalSlice";
 import Modal from "react-modal";
-import { useEffect } from "react";
 import Button from "../Button/Button";
 
 function ModalForCar() {
@@ -16,21 +15,10 @@ function ModalForCar() {
   const address = car.address.split(", ");
   const rentalCond = car.rentalConditions.split("\n");
 
-  useEffect(() => {
-    if (isOpenModal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpenModal]);
-
   return (
     <Modal
       isOpen={isOpenModal}
+      bodyOpenClassName={s.openBody}
       onRequestClose={() => {
         dispatch(closeModal());
       }}
@@ -68,7 +56,12 @@ function ModalForCar() {
         <div>Mileage: {car.mileage}</div>
         <div>Mileage: {car.rentalPrice}</div>
       </div>
-      <Button type={"Rental car"} />
+      <Button
+        type={"Rental car"}
+        onClick={() => {
+          window.location.href = "tel:+380730000000";
+        }}
+      />
 
       <div
         className={s.modal_close}
