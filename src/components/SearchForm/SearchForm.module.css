@@ -1,6 +1,7 @@
 .form {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 18px;
@@ -8,6 +9,7 @@
 
 .from_to_wrap {
   display: flex;
+  /* flex-wrap: wrap; */
   position: relative;
   justify-content: center;
   align-items: center;

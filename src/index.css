@@ -1,3 +1,51 @@
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/Manrope-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/Manrope-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/Manrope-SemiBold.ttf) format("truetype");
+}
+
+:root {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  font-weight: 400;
+  overflow: hidden;
+
+  color: var(--text-color);
+  /* background-color: black; */
+  background-image: url("../public/img/gradient-desktop.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   position: relative;
   margin: 0;
