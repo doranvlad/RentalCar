@@ -16,8 +16,6 @@ function ModalForCar() {
   const address = car.address.split(", ");
   const rentalCond = car.rentalConditions.split("\n");
 
-  console.log(car);
-
   useEffect(() => {
     if (isOpenModal) {
       document.body.style.overflow = "hidden";

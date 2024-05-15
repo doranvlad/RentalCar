@@ -34,7 +34,6 @@ const filtersSlice = createSlice({
   },
   reducers: {
     changeFiltersState: (state, { payload }) => {
-      console.log(payload);
       state.filters.brand = payload.brand;
       if (payload.price) {
         // state.filters.price = "$" + payload.price;

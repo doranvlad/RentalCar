@@ -76,7 +76,6 @@ export const selectFilteredCars = createSelector(
     }
 
     if (value.mileage.from) {
-      console.log(value.mileage.from);
       cars = cars.filter((car) => {
         const find = +car.mileage - +value.mileage.from;
 
@@ -85,7 +84,6 @@ export const selectFilteredCars = createSelector(
     }
 
     if (value.mileage.to) {
-      console.log(value.mileage.to);
       cars = cars.filter((car) => {
         return +car.mileage - +value.mileage.to <= 0;
       });
